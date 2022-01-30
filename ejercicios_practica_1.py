@@ -11,14 +11,14 @@
 
 import csv
 
-
 def ej1():
     print('Ejercicios con diccionarios 1º')
     # Crear un diccionario vacio
     # el diccionario vacio debe llamarse "stock"
     
     # stock = ....
-
+    stock = {}
+    
     # Luego de crear el diccionario completelo
     # con el siguiente stock:
     # tornillos = 100
@@ -29,7 +29,12 @@ def ej1():
     # son las claves (keys) del diccionario
     # mientras que las cantidades son los valores (values)
 
+    stock['tornillos'] = 100
+    stock['tuercas'] = 150
+    stock['arandelas'] = 300
+
     # Una vez armado el diccionario imprimirlo en pantalla con print
+    print(stock)
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
 
@@ -67,8 +72,30 @@ def ej2():
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
 
+    print("A continuacion, escriba el producto al que desee agregar stock.")
+    print("Para finalizar escribir la palabra 'FIN'")
+
+    while True:
+        eleccion = input("Producto: ")
+        existencia = eleccion in strock
+        
+        if eleccion == "FIN":
+            break
+
+        elif existencia == False:
+            print("El producto no se encuentra en el stock. Por favor escriba uno existente.")
+
+        elif existencia == True:
+            stock_a_sumar = int(input("Stock a ingresar:"))
+            stock_actual = strock[eleccion]
+            strock[eleccion] = stock_actual + stock_a_sumar
+    
+    print("El stock actual es el siguiente: ")
+    print(strock)
+            
 
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
     ej1()
+    print("")
     ej2()
